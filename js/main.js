@@ -73,15 +73,21 @@ function getHoroscope() {
 
   var title = document.createElement("h2");
   newDiv.appendChild(title);
+  title.className = "empty";
 
   var img = document.createElement('img');
   newDiv.appendChild(img);
+  img.className = "empty";
 
   var description = document.createElement("div");
   newDiv.appendChild(description);
+  description.className = "empty";
 
   for (var i = 0; i < horoscopes.length; i++) {
     if (input.value == horoscopes[i].name) {
+      input.value = [];
+      
+
       console.log('You typed in ' + horoscopes[i].name)
       title.innerHTML = horoscopes[i].name;
       img.src = horoscopes[i].img;

@@ -61,32 +61,33 @@ var horoscopes = [
   },
 ]
 
+var body = document.getElementById("body");
+var newDiv = document.createElement("div");
+body.appendChild(newDiv);
+newDiv.className = 'container text-center';
+
+var title = document.createElement("h2");
+newDiv.appendChild(title);
+title.className = "empty";
+
+var img = document.createElement('img');
+newDiv.appendChild(img);
+img.className = "empty";
+
+var description = document.createElement("div");
+newDiv.appendChild(description);
+description.className = "empty";
+
+
 function getHoroscope() {
 
   var input = document.getElementById("input");
   console.log(input.value);
 
-  var body = document.getElementById("body");
-  var newDiv = document.createElement("div");
-  body.appendChild(newDiv);
-  newDiv.className = 'container text-center';
-
-  var title = document.createElement("h2");
-  newDiv.appendChild(title);
-  title.className = "empty";
-
-  var img = document.createElement('img');
-  newDiv.appendChild(img);
-  img.className = "empty";
-
-  var description = document.createElement("div");
-  newDiv.appendChild(description);
-  description.className = "empty";
 
   for (var i = 0; i < horoscopes.length; i++) {
     if (input.value == horoscopes[i].name) {
       input.value = [];
-      
 
       console.log('You typed in ' + horoscopes[i].name)
       title.innerHTML = horoscopes[i].name;
